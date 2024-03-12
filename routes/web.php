@@ -14,5 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+
+    $data = [];
+    for ($i = 0; $i<10; $i++){
+        $newNumber = rand(0, 100);
+        array_push($data, $newNumber);
+    }
+
+    return view('home', compact('data'));
 });
